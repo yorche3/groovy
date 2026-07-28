@@ -1,93 +1,115 @@
-# Foundations — Groovy
+# 🚀 Foundations — Groovy
 
-Implementación de los módulos fundamentales en **Groovy**, con un enfoque manual y minimalista.  
-Este nivel agrupa las implementaciones de «Hello World», «Hello User», «Numbers» y «Unit Test (Calculator)».
+Implementaciones de la [Fase 0 — Fundamentos](https://yorche3.github.io/programming_languages/ROADMAP/#fase-0--fundamentos--foundations--completada) en **Groovy**: `helloworld`, `hellouser`, `unit_test/calculator` y `numbers`.
 
 ---
 
-## 📂 Submódulos y estructura / Submodules & Structure
+## 📖 Módulos / Modules
 
-El proyecto `foundations` es un contenedor lógico; cada submódulo es independiente y puede ejecutarse o compilarse por separado.
+| Módulo | Especificación | Enfoque | Tests | Estado |
+|--------|---------------|---------|:-----:|:------:|
+| [`helloworld/`](helloworld/) | [01_Hello_World](https://yorche3.github.io/programming_languages/core/foundations/01_Hello_World/) | Script directo (`groovy`) | — | ✅ |
+| [`hellouser/`](hellouser/) | [02_Hello_User](https://yorche3.github.io/programming_languages/core/foundations/02_Hello_User/) | Script directo (`groovy`) | — | ✅ |
+| [`unit_test/calculator/`](unit_test/calculator/) | [03_Unit_Test_Calculator](https://yorche3.github.io/programming_languages/core/foundations/03_Unit_Test_Calculator/) | Gradle + **Spock** | 5 | ✅ |
+| [`numbers/`](numbers/) | [04_Numbers](https://yorche3.github.io/programming_languages/core/foundations/04_Numbers/) | Gradle + **Spock** | 10 | ✅ |
 
-| Submódulo | Propósito |
-|-----------|----------|
-| `helloworld/` | Script mínimo que imprime un saludo. |
-| `hellouser/` | Script que saluda al usuario usando su nombre. |
-| `numbers/` | Biblioteca con operaciones numéricas (recursivas, acumulador, iterativas) y pruebas Spock. |
-| `unit_test/calculator/` | Biblioteca de calculadora aritmética básica con pruebas unitarias Spock. |
+---
 
-**Estructura de directorios esperada:**
+## 📁 Estructura / Structure
 
 ```text
-groovy/
-└── core/
-    └── foundations/
-        ├── helloworld/
-        │   ├── helloworld.groovy
-        │   └── README.md
-        ├── hellouser/
-        │   ├── hellouser.groovy
-        │   └── README.md
-        ├── numbers/
-        │   ├── lib/
-        │   ├── settings.gradle
-        │   └── README.md
-        └── unit_test/
-            └── calculator/
-                ├── lib/
-                ├── settings.gradle
-                └── README.md
+foundations/
+├── helloworld/                   # 01_Hello_World
+│   ├── helloworld.groovy         # println 'Hello, World!, from Groovy!'
+│   └── README.md
+│
+├── hellouser/                    # 02_Hello_User
+│   ├── hellouser.groovy          # Lee nombre con System.console() y saluda
+│   └── README.md
+│
+├── unit_test/
+│   └── calculator/               # 03_Unit_Test_Calculator
+│       ├── lib/
+│       │   ├── src/main/groovy/org/example/
+│       │   │   └── Calculator.groovy    # 5 operaciones (+, -, *, /, mod)
+│       │   ├── src/test/groovy/org/example/
+│       │   │   └── CalculatorTest.groovy # 5 tests con Spock
+│       │   └── build.gradle
+│       ├── settings.gradle
+│       ├── gradle.properties
+│       ├── gradle/libs.versions.toml
+│       ├── gradlew / gradlew.bat
+│       ├── .gitignore
+│       ├── .gitattributes
+│       └── README.md
+│
+└── numbers/                      # 04_Numbers
+    ├── lib/
+    │   ├── src/main/groovy/org/example/
+    │   │   └── Numbers.groovy    # 15 funciones (3 enfoques × 5 algoritmos)
+    │   ├── src/test/groovy/org/example/
+    │   │   ├── NumbersRecTest.groovy  # 5 tests recursivos
+    │   │   └── NumbersIteTest.groovy  # 5 tests iterativos
+    │   └── build.gradle
+    ├── settings.gradle
+    ├── gradle.properties
+    ├── gradle/libs.versions.toml
+    ├── gradlew / gradlew.bat
+    ├── .gitignore
+    ├── .gitattributes
+    └── README.md
 ```
 
-Los submódulos de scripts (`helloworld`, `hellouser`) se ejecutan directamente con el intérprete de Groovy.  
-Los submódulos con pruebas (`numbers`, `unit_test/calculator`) usan Gradle como sistema de construcción.
+---
+
+## 🛠️ Patrón común / Common Pattern
+
+| Característica | Descripción |
+|---------------|-------------|
+| **Lenguaje** | Groovy 4.x sobre JVM (JDK 21) |
+| **Build system** | Scripts directos (`groovy`) o **Gradle** con DSL Groovy para proyectos con tests |
+| **Test framework** | [Spock](https://spockframework.org/) 2.4 para pruebas unitarias |
+| **Dependencias** | Gradle gestiona Guava, Commons Math, y otras dependencias automáticamente |
+| **Ejecución directa** | `groovy <script>.groovy` para programas simples |
+| **Ejecución con Gradle** | `./gradlew test` para proyectos con pruebas |
 
 ---
 
-## 🛠️ Enfoque y construcción / Approach & Build
+## 🚀 Compilación rápida / Quick Build
 
-**ES:** Todos los proyectos bajo `foundations` se crearon manualmente, sin herramientas de scaffolding, para controlar cada detalle y mantener la máxima transparencia. Los scripts no requieren compilación; las bibliotecas se gestionan con Gradle.
+```bash
+# Hello, World!
+cd helloworld
+groovy helloworld.groovy
 
-**EN:** All projects under `foundations` were created manually, without scaffolding tools, to control every detail and maintain maximum transparency. The scripts require no compilation; the libraries are managed with Gradle.
+# Hello, User!
+cd hellouser
+groovy hellouser.groovy
 
-### Ejecución de los submódulos
+# Calculator Tests
+cd unit_test/calculator
+./gradlew test
 
-- **Scripts** (`helloworld`, `hellouser`):
-  ```bash
-  groovy helloworld.groovy
-  groovy hellouser.groovy
-  ```
-
-- **Bibliotecas con pruebas** (`numbers`, `unit_test/calculator`):
-  ```bash
-  cd numbers
-  ./gradlew test
-
-  cd ../unit_test/calculator
-  ./gradlew test
-  ```
+# Numbers Tests
+cd numbers
+./gradlew test
+```
 
 ---
 
-## 📝 Notas de implementación / Implementation Notes
+### 🌐 Otras implementaciones / Other implementations
 
-### Groovy sobre la JVM
-
-Todos los submódulos se ejecutan sobre la **Java Virtual Machine (JVM)**.  
-Groovy permite tanto la ejecución directa de scripts (sin clases ni método `main`) como la definición de clases completas que siguen el modelo de Java.  
-Esto facilita una progresión natural dentro de `foundations`:
-
-1. **`helloworld`** – script directo.  
-2. **`hellouser`** – script con entrada de usuario e interpolación de cadenas.  
-3. **`numbers`** – biblioteca con métodos estáticos y de instancia, y pruebas unitarias.  
-4. **`unit_test/calculator`** – biblioteca con operaciones construidas desde cero y pruebas Spock.  
-
-### Tail Call Optimization (TCO)
-
-Groovy **no** garantiza TCO porque la JVM subyacente no ofrece soporte nativo para la optimización de llamadas de cola. Los métodos con acumulador presentes en el submódulo `numbers` se conservan únicamente con fines educativos.
+Este proyecto también está implementado en otros lenguajes. Explora el [repositorio principal](https://github.com/yorche3/programming_languages) para ver todas las versiones.
 
 ---
 
-Este proyecto también está implementado en otros lenguajes. Explora el repositorio principal para ver todas las versiones.
+## ▶️ Siguiente / Next
 
-🌐 [github.com/yorche3/programming_languages](https://github.com/yorche3/programming_languages) · [GitHub Pages](https://yorche3.github.io/programming_languages/)
+👉 Después de fundamentos, continúa con [Fase 1 — Algoritmos Puros](https://yorche3.github.io/programming_languages/ROADMAP/#fase-1--algoritmos-puros--algorithms-pure-).  
+👉 After foundations, continue with [Phase 1 — Algorithms Pure](https://yorche3.github.io/programming_languages/ROADMAP/#fase-1--algoritmos-puros--algorithms-pure-).
+
+---
+
+*[← Volver a Groovy](../README.md)*
+
+*🌐 [github.com/yorche3/programming_languages](https://github.com/yorche3/programming_languages) · [GitHub Pages](https://yorche3.github.io/programming_languages/)*
