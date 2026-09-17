@@ -12,7 +12,7 @@ Proyecto Gradle multiproyecto con un submódulo `lib` que contiene la biblioteca
 
 | Archivo / Directorio | Propósito |
 |----------------------|-----------|
-| `lib/src/main/groovy/org/example/NaiveSort.groovy` | Las 3 funciones del contrato, con sus helpers (`pickMin`). |
+| `lib/src/main/groovy/org/example/NaiveSort.groovy` | Las 3 funciones del contrato. |
 | `lib/src/test/groovy/org/example/NaiveSortTest.groovy` | Especificación Spock: 3 tests, 8 casos cada uno. |
 | `settings.gradle` | Proyecto raíz (`naive_sort`) y submódulo `lib`. |
 | `lib/build.gradle` | Plugins, dependencias y framework de pruebas. |
@@ -241,9 +241,9 @@ BUILD SUCCESSFUL in 2s
 
 ### 🏷️ Naming y visibilidad / Naming and visibility
 
-**ES:** La especificación nombra las funciones en `snake_case` (`selection_sort`); Groovy y el módulo hermano `numbers/` usan `camelCase`, así que la API es `selectionSort`, `bubbleSort` e `insertionSort`. Las tres son métodos `static` de la clase `NaiveSort`, invocados como `NaiveSort.selectionSort(list)`, igual que `Numbers.sumFirstNRec(n)`. El helper `pickMin` de `selectionSort` es un método privado de la clase.
+**ES:** La especificación nombra las funciones en `snake_case` (`selection_sort`); Groovy y el módulo hermano `numbers/` usan `camelCase`, así que la API es `selectionSort`, `bubbleSort` e `insertionSort`. Las tres son métodos `static` de la clase `NaiveSort`, invocadas como `NaiveSort.selectionSort(list)`, igual que `Numbers.sumFirstNRec(n)`. El cuerpo de cada una es autocontenido: los bucles internos van inline, sin helpers auxiliares.
 
-**EN:** The specification names the functions in `snake_case` (`selection_sort`); Groovy and the sibling `numbers/` module use `camelCase`, so the API is `selectionSort`, `bubbleSort` and `insertionSort`. All three are `static` methods of the `NaiveSort` class, invoked as `NaiveSort.selectionSort(list)`, just like `Numbers.sumFirstNRec(n)`. The `pickMin` helper of `selectionSort` is a private method of the class.
+**EN:** The specification names the functions in `snake_case` (`selection_sort`); Groovy and the sibling `numbers/` module use `camelCase`, so the API is `selectionSort`, `bubbleSort` and `insertionSort`. All three are `static` methods of the `NaiveSort` class, invoked as `NaiveSort.selectionSort(list)`, just like `Numbers.sumFirstNRec(n)`. Each body is self-contained: the inner loops are inlined, with no auxiliary helpers.
 
 ### 🧪 Estructura de los tests / Test structure
 
