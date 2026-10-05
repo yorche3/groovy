@@ -5,10 +5,10 @@ package data_structures_basics
 
 import spock.lang.Specification
 
-class LibraryTest extends Specification {
+class DataStructuresBasicsTest extends Specification {
     def "someLibraryMethod returns true"() {
         setup:
-        def lib = new Library()
+        def lib = new DataStructuresBasics()
 
         when:
         def result = lib.someLibraryMethod()
