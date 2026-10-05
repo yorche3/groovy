@@ -11,6 +11,7 @@ Los módulos de esta fase trabajan sobre `List<Integer>`, el tipo de colección 
 | Módulo | Especificación | Enfoque | Tests | Estado |
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `./gradlew test` + Spock | 3 | ✅ |
+| [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `./gradlew test` + Spock | 3 | ✅ |
 
 ---
 
@@ -18,7 +19,22 @@ Los módulos de esta fase trabajan sobre `List<Integer>`, el tipo de colección 
 
 ```text
 algorithms/
-└── naive_sort/                          # 05_Naive_Sort
+├── naive_sort/                          # 05_Naive_Sort
+│   ├── settings.gradle
+│   ├── gradle.properties
+│   ├── .gitignore / .gitattributes
+│   ├── gradlew / gradlew.bat
+│   ├── gradle/
+│   │   ├── libs.versions.toml
+│   │   └── wrapper/
+│   └── lib/
+│       ├── build.gradle
+│       └── src/
+│           ├── main/groovy/org/example/
+│           │   └── NaiveSort.groovy     # selectionSort, bubbleSort, insertionSort
+│           └── test/groovy/org/example/
+│               └── NaiveSortTest.groovy # 3 tests × (7 casos + caso nulo)
+└── data_structures_basics/              # 06_Data_Structures_Basics
     ├── settings.gradle
     ├── gradle.properties
     ├── .gitignore / .gitattributes
@@ -29,10 +45,13 @@ algorithms/
     └── lib/
         ├── build.gradle
         └── src/
-            ├── main/groovy/org/example/
-            │   └── NaiveSort.groovy     # selectionSort, bubbleSort, insertionSort
-            └── test/groovy/org/example/
-                └── NaiveSortTest.groovy # 3 tests × (7 casos + caso nulo)
+            ├── main/groovy/data_structures_basics/
+            │   ├── Node.groovy          # Nodo genérico para listas enlazadas
+            │   ├── LinkedList.groovy    # Lista enlazada (append, toList, size)
+            │   ├── Stack.groovy         # Pila (push, pop, peek, isEmpty, size)
+            │   └── Queue.groovy         # Cola (enqueue, dequeue, front, isEmpty, size)
+            └── test/groovy/data_structures_basics/
+                └── DataStructuresBasicsTest.groovy # Specs Spock para LinkedList, Stack y Queue
 ```
 
 ---
@@ -63,6 +82,10 @@ algorithms/
 ```bash
 # Naive Sort Tests
 cd naive_sort
+./gradlew test
+
+# Data Structures Basics Tests
+cd data_structures_basics
 ./gradlew test
 ```
 
