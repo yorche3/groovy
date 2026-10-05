@@ -18,25 +18,35 @@ class Stack {
 
     /** Pushes value on top of the stack (push). */
     void push(Integer value) {
+        Node newNode = new Node(value)
+        newNode.next = top
+        top = newNode
+        count++
     }
 
     /** Removes and returns the top value, or -1 when the stack is empty (pop). */
     int pop() {
-        -1
+        if (top == null) {
+            return -1
+        }
+        int value = top.value
+        top = top.next
+        count--
+        return value
     }
 
     /** Returns the top value without removing it, or -1 when empty (peek). */
     int peek() {
-        -1
+        return top?.value ?: -1
     }
 
     /** True when no nodes are stored (is_empty). */
     boolean isEmpty() {
-        false
+        return count == 0
     }
 
     /** Number of nodes stored (size). */
     int getSize() {
-        0
+        return count
     }
 }

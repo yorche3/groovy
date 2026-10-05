@@ -20,29 +20,63 @@ class LinkedList {
 
     /** Head value, or -1 when the list is empty (get_head). */
     int getHeadValue() {
-        -1
+        return head?.value ?: -1
     }
 
     /** Inserts value at the head (insert_head). */
     void insertHead(Integer value) {
+        Node newNode = new Node(value)
+        newNode.next = head
+        head = newNode
+        if (tail == null) {
+            tail = newNode
+        }
+        count++
     }
 
     /** Inserts value at the tail (insert_tail). */
     void insertTail(Integer value) {
+        Node newNode = new Node(value)
+        if (tail != null) {
+            tail.next = newNode
+        }
+        tail = newNode
+        if (head == null) {
+            head = newNode
+        }
+        count++
     }
 
     /** Removes the first occurrence of value; false when it is absent (delete). */
     boolean delete(Integer value) {
-        false
+        Node current = head
+        Node previous = null
+        while (current != null) {
+            if (current.value == value) {
+                if (previous != null) {
+                    previous.next = current.next
+                } else {
+                    head = current.next
+                }
+                if (current.next == null) {
+                    tail = previous
+                }
+                count--
+                return true
+            }
+            previous = current
+            current = current.next
+        }
+        return false
     }
 
     /** True when no nodes are stored (is_empty). */
     boolean isEmpty() {
-        false
+        return count == 0
     }
 
     /** Number of nodes stored (size). */
     int getSize() {
-        0
+        return count
     }
 }
