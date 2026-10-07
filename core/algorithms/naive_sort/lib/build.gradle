@@ -3,7 +3,6 @@
  *
  * This generated file contains a sample Groovy library project to get you started.
  * For more details on building Java & JVM projects, please refer to https://docs.gradle.org/9.6.1/userguide/building_java_projects.html in the Gradle documentation.
- * This project uses @Incubating APIs which are subject to change.
  */
 
 plugins {
@@ -12,9 +11,6 @@ plugins {
 
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-
-    //
-    id 'com.adarshr.test-logger' version '4.0.0'
 }
 
 repositories {
@@ -29,18 +25,14 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation libs.guava
 
+    // Use the awesome Spock testing and specification framework even with Java
+    testImplementation libs.spock.core
+    testImplementation libs.junit
+
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api libs.commons.math3
-}
-
-testing {
-    suites {
-        // Configure the built-in test suite
-        test {
-            // Use Spock test framework
-            useSpock('2.4-groovy-4.0')
-        }
-    }
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -50,9 +42,7 @@ java {
     }
 }
 
-testlogger {
-    theme 'mocha'           // Temas: standard, mocha, plain, etc.
-    showSummary true        // Muestra el resumen final
-    showPassed true         // Muestra pruebas pasadas (opcional)
-    showFailed true         // Muestra pruebas fallidas (opcional)
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
 }

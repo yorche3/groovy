@@ -68,8 +68,8 @@ groovy/
 1. Crear la estructura de directorios:
 
    ```bash
-   mkdir -p groovy/core/foundations/unit_test/calculator/lib/src/main/groovy/org/example
-   mkdir -p groovy/core/foundations/unit_test/calculator/lib/src/test/groovy/org/example
+   mkdir -p groovy/core/foundations/unit_test/calculator/lib/src/main/groovy/calculator
+   mkdir -p groovy/core/foundations/unit_test/calculator/lib/src/test/groovy/calculator
    ```
 
 2. Escribir `Calculator.groovy` y `CalculatorTest.groovy` en las rutas correspondientes.

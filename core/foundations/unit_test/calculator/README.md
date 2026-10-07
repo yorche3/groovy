@@ -8,8 +8,8 @@ Implementación de la especificación [03_Unit_Test_Calculator](https://yorche3.
 
 | Archivo / Directorio | Propósito |
 |----------------------|-----------|
-| [`lib/src/main/groovy/org/example/Calculator.groovy`](lib/src/main/groovy/org/example/Calculator.groovy) | Clase `Calculator` — implementa las 5 operaciones aritméticas. |
-| [`lib/src/test/groovy/org/example/CalculatorTest.groovy`](lib/src/test/groovy/org/example/CalculatorTest.groovy) | Suite de pruebas con Spock — 5 tests (`Specification`). |
+| [`lib/src/main/groovy/calculator/Calculator.groovy`](lib/src/main/groovy/calculator/Calculator.groovy) | Clase `Calculator` — implementa las 5 operaciones aritméticas. |
+| [`lib/src/test/groovy/calculator/CalculatorTest.groovy`](lib/src/test/groovy/calculator/CalculatorTest.groovy) | Suite de pruebas con Spock — 5 tests (`Specification`). |
 | `lib/build.gradle` | Plugins (`groovy`, `java-library`), dependencias y configuración de Spock. |
 | `settings.gradle` | Configuración del proyecto raíz y submódulo `lib`. |
 | `gradle.properties` | Propiedades JVM para Gradle. |

@@ -11,7 +11,7 @@
  * Caso nulo: Groovy admite `null`, así que el indicador de fallo es devolver
  * `null` cuando la entrada es `null`, sin lanzar excepciones.
  */
-package org.example
+package naive_sort
 
 class NaiveSort {
     static List<Integer> selectionSort(List<Integer> list) {

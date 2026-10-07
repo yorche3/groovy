@@ -1,7 +1,7 @@
 /*
  * naive_sort_test.groovy — Pruebas unitarias de la especificación 05_Naive_Sort
  */
-package org.example
+package naive_sort
 
 import spock.lang.Specification
 

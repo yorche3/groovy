@@ -12,8 +12,8 @@ Proyecto Gradle multiproyecto con un submódulo `lib` que contiene la biblioteca
 
 | Archivo / Directorio | Propósito |
 |----------------------|-----------|
-| `lib/src/main/groovy/org/example/NaiveSort.groovy` | Las 3 funciones del contrato. |
-| `lib/src/test/groovy/org/example/NaiveSortTest.groovy` | Especificación Spock: 3 tests, 8 casos cada uno. |
+| `lib/src/main/groovy/naive_sort/NaiveSort.groovy` | Las 3 funciones del contrato. |
+| `lib/src/test/groovy/naive_sort/NaiveSortTest.groovy` | Especificación Spock: 3 tests, 8 casos cada uno. |
 | `settings.gradle` | Proyecto raíz (`naive_sort`) y submódulo `lib`. |
 | `lib/build.gradle` | Plugins, dependencias y framework de pruebas. |
 | `gradle.properties` | Propiedades de Gradle. |
@@ -165,7 +165,7 @@ $ ./gradlew clean test --rerun-tasks --console=plain
 
 > Task :lib:test
 
-org.example.NaiveSortTest
+naive_sort.NaiveSortTest
 
   Test selection_sort should sort all cases PASSED
   Test bubble_sort should sort all cases PASSED
@@ -269,8 +269,8 @@ BUILD SUCCESSFUL in 2s
 
 | Especificación | Implementación | Motivo |
 |----------------|----------------|--------|
-| `src/naive_sort.ext` | `lib/src/main/groovy/org/example/NaiveSort.groovy` | Layout de `gradle init --type groovy-library`, que usa el submódulo `lib` con el árbol estándar de Gradle y el paquete `org.example`, igual que `numbers/`. |
-| `test/naive_sort_test.ext` | `lib/src/test/groovy/org/example/NaiveSortTest.groovy` | Misma razón: el directorio de pruebas estándar de Gradle es `src/test`. |
+| `src/naive_sort.ext` | `lib/src/main/groovy/naive_sort/NaiveSort.groovy` | Layout de `gradle init --type groovy-library`, que usa el submódulo `lib` con el árbol estándar de Gradle; el paquete toma el nombre del módulo, igual que en `data_structures_basics/`. |
+| `test/naive_sort_test.ext` | `lib/src/test/groovy/naive_sort/NaiveSortTest.groovy` | Misma razón: el directorio de pruebas estándar de Gradle es `src/test`. |
 | `test/run_tests.ext` | *(no existe)* | `./gradlew test` descubre automáticamente las clases `Specification` de Spock; no se necesita punto de entrada. |
 
 **ES:** Este proyecto también está implementado en otros lenguajes. Explora el repositorio principal para consultar las demás versiones.

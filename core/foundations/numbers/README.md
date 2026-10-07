@@ -10,9 +10,9 @@ Proyecto Gradle que contiene una biblioteca de operaciones numéricas implementa
 
 | Archivo / Directorio | Propósito |
 |----------------------|-----------|
-| `lib/src/main/groovy/org/example/Numbers.groovy` | Código fuente con todos los algoritmos. |
-| `lib/src/test/groovy/org/example/NumbersRecTest.groovy` | Pruebas unitarias para los métodos recursivos directos. |
-| `lib/src/test/groovy/org/example/NumbersIteTest.groovy` | Pruebas unitarias para los métodos iterativos. |
+| `lib/src/main/groovy/numbers/Numbers.groovy` | Código fuente con todos los algoritmos. |
+| `lib/src/test/groovy/numbers/NumbersRecTest.groovy` | Pruebas unitarias para los métodos recursivos directos. |
+| `lib/src/test/groovy/numbers/NumbersIteTest.groovy` | Pruebas unitarias para los métodos iterativos. |
 | `settings.gradle` | Configuración del proyecto raíz y submódulo `lib`. |
 | `lib/build.gradle` | Plugins, dependencias y framework de pruebas. |
 | `gradle.properties` | Propiedades JVM para Gradle. |
@@ -69,8 +69,8 @@ groovy/
 1. Crear la estructura de directorios:
 
    ```bash
-   mkdir -p groovy/core/foundations/numbers/lib/src/main/groovy/org/example
-   mkdir -p groovy/core/foundations/numbers/lib/src/test/groovy/org/example
+   mkdir -p groovy/core/foundations/numbers/lib/src/main/groovy/numbers
+   mkdir -p groovy/core/foundations/numbers/lib/src/test/groovy/numbers
    ```
 
 2. Escribir `Numbers.groovy`, `NumbersRecTest.groovy` y `NumbersIteTest.groovy`.

@@ -30,9 +30,9 @@ foundations/
 ├── unit_test/
 │   └── calculator/               # 03_Unit_Test_Calculator
 │       ├── lib/
-│       │   ├── src/main/groovy/org/example/
+│       │   ├── src/main/groovy/calculator/
 │       │   │   └── Calculator.groovy    # 5 operaciones (+, -, *, /, mod)
-│       │   ├── src/test/groovy/org/example/
+│       │   ├── src/test/groovy/calculator/
 │       │   │   └── CalculatorTest.groovy # 5 tests con Spock
 │       │   └── build.gradle
 │       ├── settings.gradle
@@ -45,9 +45,9 @@ foundations/
 │
 └── numbers/                      # 04_Numbers
     ├── lib/
-    │   ├── src/main/groovy/org/example/
+    │   ├── src/main/groovy/numbers/
     │   │   └── Numbers.groovy    # 15 funciones (3 enfoques × 5 algoritmos)
-    │   ├── src/test/groovy/org/example/
+    │   ├── src/test/groovy/numbers/
     │   │   ├── NumbersRecTest.groovy  # 5 tests recursivos
     │   │   └── NumbersIteTest.groovy  # 5 tests iterativos
     │   └── build.gradle

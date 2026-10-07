@@ -30,9 +30,9 @@ algorithms/
 │   └── lib/
 │       ├── build.gradle
 │       └── src/
-│           ├── main/groovy/org/example/
+│           ├── main/groovy/naive_sort/
 │           │   └── NaiveSort.groovy     # selectionSort, bubbleSort, insertionSort
-│           └── test/groovy/org/example/
+│           └── test/groovy/naive_sort/
 │               └── NaiveSortTest.groovy # 3 tests × (7 casos + caso nulo)
 └── data_structures_basics/              # 06_Data_Structures_Basics
     ├── settings.gradle
