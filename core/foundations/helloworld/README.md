@@ -10,7 +10,7 @@ El proyecto consiste en un único script fuente, sin configuración de build ni 
 
 | Archivo / Directorio | Propósito |
 |----------------------|-----------|
-| `helloworld.groovy`  | Código fuente principal que imprime el saludo. |
+| `hello_world.groovy`  | Código fuente principal que imprime el saludo. |
 
 **Estructura de directorios esperada:**
 
@@ -19,7 +19,7 @@ groovy/
 └── core/
     └── foundations/
         └── helloworld/
-            └── helloworld.groovy
+            └── hello_world.groovy
 ```
 
 No se requieren directorios adicionales de compilación, pruebas ni manifiestos.  
@@ -41,7 +41,7 @@ El script es autocontenido y puede ejecutarse directamente con el intérprete de
    mkdir -p groovy/core/foundations/helloworld
    ```
 
-2. Escribir el script `helloworld.groovy` con el código fuente.
+2. Escribir el script `hello_world.groovy` con el código fuente.
 
 3. No se necesita ningún paso adicional de construcción o vinculación de dependencias.
 
@@ -66,13 +66,13 @@ Sin embargo, en este módulo no se utiliza compilación previa.
 ### Ejecutar programa principal / Run main program
 
 ```bash
-groovy helloworld.groovy
+groovy hello_world.groovy
 ```
 
 Si se prefiere compilar a bytecode y luego ejecutar:
 
 ```bash
-groovyc helloworld.groovy
+groovyc hello_world.groovy
 groovy -cp . helloworld
 ```
 
