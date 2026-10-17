@@ -5,8 +5,8 @@ import groovy.transform.CompileStatic
 /**
  * LIFO stack built from scratch over Node.
  *
- * Contract stub (step 4b): every body stays at its failure indicator - -1 for
- * numbers and false for flags -, and no `null` is used outside the Node links.
+ * Contract: every body is implemented; the failure indicator is -1 for numbers
+ * and false for flags, and no `null` is used outside the Node links.
  *
  * The default constructor yields the initialized, empty stack: `new Stack()` is
  * the contract's `init`.
