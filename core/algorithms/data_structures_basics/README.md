@@ -25,8 +25,9 @@ Proyecto Gradle que contiene una biblioteca de estructuras de datos enlazadas im
 | `gradle/libs.versions.toml` | Catálogo de versiones. |
 | `gradlew` / `gradlew.bat` | Gradle Wrapper (Unix / Windows). |
 | `gradle/wrapper/` | Binarios y configuración del Wrapper. |
-| `.gitignore` | Ignora `.gradle`, `build` y `.kotlin`. |
+| `.gitignore` | Ignora `.gradle`, `build`, `.kotlin` y `lib/bin`. |
 | `.gitattributes` | Normaliza fines de línea. |
+| `lib/bin/` | Salida compilada de Groovy (clases generadas); no se versiona. |
 
 **Desviación de la ubicación esperada:**
 
