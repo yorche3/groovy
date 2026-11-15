@@ -4,21 +4,27 @@ import groovy.transform.CompileStatic
 
 @CompileStatic
 class TreeNode extends Node {
+
+    private TreeNode left
+    private TreeNode right
+
     TreeNode(Integer value) {
         super(value)
     }
 
     TreeNode getLeft() {
-        return null
+        return left
     }
 
     TreeNode getRight() {
-        return null
+        return right
     }
 
     void setLeft(TreeNode node) {
+        this.left = node
     }
 
     void setRight(TreeNode node) {
+        this.right = node
     }
 }

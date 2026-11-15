@@ -7,9 +7,10 @@ abstract class Node {
     private Integer value
 
     protected Node(Integer value) {
+        this.value = value
     }
 
     Integer getValue() {
-        return null
+        return this.value
     }
 }
