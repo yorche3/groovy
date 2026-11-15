@@ -12,6 +12,7 @@ Los módulos de esta fase trabajan sobre `List<Integer>`, el tipo de colección 
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `./gradlew test` + Spock | 3 | ✅ |
 | [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `./gradlew test` + Spock | 3 | ✅ |
+| [`data_structures_advanced/`](data_structures_advanced/) | [07_Data_Structures_Advanced](https://yorche3.github.io/programming_languages/core/algorithms/07_Data_Structures_Advanced/) | `./gradlew test` + Spock | 3 | ✅ |
 
 ---
 
@@ -52,6 +53,25 @@ algorithms/
             │   └── Queue.groovy         # Cola (enqueue, dequeue, front, isEmpty, size)
             └── test/groovy/data_structures_basics/
                 └── DataStructuresBasicsTest.groovy # Specs Spock para LinkedList, Stack y Queue
+└── data_structures_advanced/            # 07_Data_Structures_Advanced
+    ├── settings.gradle
+    ├── gradle.properties
+    ├── .gitignore / .gitattributes
+    ├── gradlew / gradlew.bat
+    ├── gradle/
+    │   ├── libs.versions.toml
+    │   └── wrapper/
+    └── lib/
+        ├── build.gradle
+        └── src/
+            ├── main/groovy/data_structures_advanced/
+            │   ├── Node.groovy          # Clase base abstracta portadora del valor
+            │   ├── TreeNode.groovy      # Nodo de árbol con enlaces izquierdo y derecho
+            │   ├── BinaryTree.groovy    # Árbol binario de búsqueda
+            │   ├── GraphNode.groovy     # Nodo de grafo con vecinos ordenados
+            │   └── Graph.groovy         # Grafo dirigido con registro enlazado canónico
+            └── test/groovy/data_structures_advanced/
+                └── DataStructuresAdvancedTest.groovy # Specs Spock para TreeNode, BinaryTree y Graph
 ```
 
 ---
@@ -86,6 +106,10 @@ cd naive_sort
 
 # Data Structures Basics Tests
 cd data_structures_basics
+./gradlew test
+
+# Data Structures Advanced Tests
+cd data_structures_advanced
 ./gradlew test
 ```
 
